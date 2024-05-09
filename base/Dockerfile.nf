@@ -7,8 +7,8 @@ FROM free5gc/base as my-base
 ENV DEBIAN_FRONTEND noninteractive
 ARG F5GC_MODULE
 
-# Get Free5GC
-COPY free5gc/ $GOPATH/src/free5gc/
+# Get Free5GC from forked repository
+COPY aalayanahmad/free5gc/ $GOPATH/src/free5gc/
 
 RUN cd $GOPATH/src/free5gc \
     && make ${F5GC_MODULE}
